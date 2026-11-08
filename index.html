@@ -287,7 +287,37 @@ body.unlocked #player{display:flex}
         <circle id="ringp" cx="100" cy="100" r="99" fill="none" stroke="#FAF8F5" stroke-width="2.5" stroke-dasharray="0 622" transform="rotate(-90 100 100)"/>
         <path id="ringa" d="M 100 1 l -4 7 l 8 0 z" fill="#FAF8F5" transform="rotate(-90 100 100)" opacity="0"/>
       </svg>
-      <div id="disc" role="button" aria-label="Putar vinyl untuk membuka undangan"></div>
+     <div id="disc" role="button" aria-label="Putar vinyl untuk membuka undangan">
+  <svg viewBox="0 0 200 200">
+    <defs>
+      <linearGradient id="sh" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FAF8F5" stop-opacity=".16"/>
+        <stop offset=".35" stop-color="#FAF8F5" stop-opacity="0"/>
+        <stop offset=".7" stop-color="#FAF8F5" stop-opacity="0"/>
+        <stop offset="1" stop-color="#FAF8F5" stop-opacity=".1"/>
+      </linearGradient>
+      <path id="arc" d="M100,100 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0" fill="none"/>
+    </defs>
+    <circle cx="100" cy="100" r="99" fill="#1A1617"/>
+    <circle cx="100" cy="100" r="42" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="49" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="56" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="63" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="77" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="84" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="91" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+    <circle cx="100" cy="100" r="98" fill="url(#sh)"/>
+    <circle cx="100" cy="100" r="36" fill="#6B0F1A"/>
+    <circle cx="100" cy="100" r="36" fill="none" stroke="#FAF8F5" stroke-width=".6" opacity=".7"/>
+    <circle cx="100" cy="100" r="18" fill="none" stroke="#FAF8F5" stroke-width=".5" opacity=".4"/>
+    <text fill="#FAF8F5" style="font:6.2px 'Space Mono',monospace;letter-spacing:1.6px">
+      <textPath href="#arc" startOffset="2%">YAYAN &amp; ISNI • 45 RPM • LENTERA •</textPath>
+    </text>
+    <circle cx="100" cy="100" r="3" fill="#FAF8F5"/>
+    <circle cx="100" cy="100" r="3" fill="none" stroke="#1A1617" stroke-width="1"/>
+  </svg>
+</div>
       <div class="notch"></div>
       <div id="rot" class="mono">PUTAR VINYL UNTUK MEMBUKA UNDANGAN</div>
       <div id="badge" class="mono">OPENING... ✓</div>
