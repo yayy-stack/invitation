@@ -218,7 +218,7 @@ footer .sig .barcode{background-image:repeating-linear-gradient(to right,rgba(25
 #player{display:none;position:fixed;bottom:12px;left:12px;z-index:40;align-items:center;gap:12px;background:rgba(26,22,23,.85);backdrop-filter:blur(12px);border:1px solid rgba(250,248,245,.15);padding:8px 12px 8px 10px;box-shadow:0 10px 30px rgba(26,22,23,.35)}
 body.unlocked #player{display:flex}
 #player .mini{position:relative;width:36px;height:36px;border-radius:50%;flex-shrink:0;background:repeating-radial-gradient(circle at 50% 50%,#1A1617 0 2px,#2E2629 2px 3.4px);animation:spin 1.4s linear infinite}
-#player .mini::after{content:"absolute;inset:30%;border-radius:50%;background:var(--oxblood)}
+#player .mini::after{content:"";position:absolute;inset:30%;border-radius:50%;background:var(--oxblood)}
 #player .mini::before{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px;border-radius:50%;background:var(--ivory);z-index:1}
 #player .mq{width:150px;overflow:hidden}
 #player .mq div{display:flex;white-space:nowrap;animation:marq 14s linear infinite}
