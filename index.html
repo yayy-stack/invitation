@@ -135,4 +135,681 @@ section{border-top:1px solid var(--oxblood)}
 .track:hover .no,.track:hover .tt,.track:hover .st,.track:hover .nt{color:var(--ivory)}
 .story-foot{display:flex;align-items:center;gap:16px;margin-top:32px}
 .barcode{height:40px;width:160px;background-image:repeating-linear-gradient(to right,var(--charcoal) 0 2px,transparent 2px 4px,var(--charcoal) 4px 7px,transparent 7px 9px,var(--charcoal) 9px 10px,transparent 10px 14px)}
-.barcode.iv{background-image:repeating-linear-gradient(to right,rgba(250,248,245,.9)
+.barcode.iv{background-image:repeating-linear-gradient(to right,rgba(250,248,245,.9) 0 2px,transparent 2px 4px,rgba(250,248,245,.9) 4px 7px,transparent 7px 9px,rgba(250,248,245,.9) 9px 10px,transparent 10px 14px)}
+.story-foot span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:rgba(26,22,23,.5)}
+/* ---------- EVENTS ---------- */
+.ev-grid{display:grid;grid-template-columns:1fr;gap:32px;padding:48px 24px}
+.ev-card{display:flex;flex-direction:column;border:1px solid var(--oxblood);background:var(--ivory)}
+.ev-head{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--oxblood);color:var(--ivory);padding:16px 24px}
+.ev-head b{font-family:'Syne',sans-serif;font-weight:700;letter-spacing:-.01em;font-size:clamp(18px,2.5vw,26px)}
+.ev-head .bc{height:32px;width:96px;flex-shrink:0;background-image:repeating-linear-gradient(to right,rgba(250,248,245,.9) 0 2px,transparent 2px 4px,rgba(250,248,245,.9) 4px 7px,transparent 7px 9px,rgba(250,248,245,.9) 9px 10px,transparent 10px 14px)}
+.ev-body{display:flex;flex-direction:column;gap:20px;padding:32px 24px;flex:1}
+.ev-meta{display:flex;flex-wrap:wrap;gap:16px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em}
+.ev-venue{border:1px dashed rgba(107,15,26,.5);padding:16px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.1em}
+.ev-venue span{display:block;margin-top:6px;color:rgba(26,22,23,.6)}
+.map{border:1px solid var(--oxblood)}
+.map iframe{display:block;width:100%;height:220px;border:0;filter:grayscale(1);transition:filter .5s}
+.map:hover iframe{filter:grayscale(0)}
+.btn{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;border:1px solid var(--oxblood);padding:12px 20px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--oxblood);text-decoration:none;background:transparent;transition:background .3s,color .3s}
+.btn:hover{background:var(--oxblood);color:var(--ivory)}
+.btn.solid{background:var(--oxblood);color:var(--ivory);border-color:var(--oxblood)}
+.btn.solid:hover{background:var(--charcoal);border-color:var(--charcoal)}
+/* ---------- RSVP ---------- */
+.rsvp-grid{display:grid;grid-template-columns:1fr}
+.rsvp-form{border-bottom:1px solid var(--oxblood);padding:48px 24px}
+.rsvp-form h3{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.03em;font-size:clamp(32px,5vw,52px);color:var(--charcoal)}
+.rsvp-form h3 i{font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;color:var(--oxblood)}
+.rsvp-form form{margin-top:36px;display:flex;flex-direction:column;gap:26px}
+.flabel{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3em;color:rgba(26,22,23,.6)}
+input[type=text],textarea{width:100%;margin-top:8px;background:transparent;border:1px solid var(--oxblood);padding:14px;font-family:'Space Mono',monospace;font-size:14px;color:var(--charcoal);border-radius:0}
+input[type=text]:focus,textarea:focus{outline:2px solid rgba(107,15,26,.4);outline-offset:-1px}
+textarea{font-family:'Plus Jakarta Sans',sans-serif;resize:none;min-height:110px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.seg button{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(107,15,26,.4);color:var(--oxblood);padding:12px 4px;transition:background .2s,color .2s,border-color .2s}
+.seg button:hover{border-color:var(--oxblood)}
+.seg button.on{background:var(--oxblood);color:var(--ivory);border-color:var(--oxblood)}
+.seg.two{grid-template-columns:repeat(2,110px)}
+.seg.two button{font-size:14px}
+.form-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.notes{background:var(--stone);padding:48px 24px}
+.notes-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.notes-top .tag{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--oxblood)}
+.notes-top .cnt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(26,22,23,.5)}
+.wall{display:grid;grid-template-columns:1fr;gap:12px;max-height:560px;overflow-y:auto;padding-right:4px}
+.note{border:1px solid var(--oxblood);background:var(--ivory);padding:16px;display:flex;flex-direction:column;gap:8px}
+.note .top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--oxblood)}
+.note .top em{font-style:normal;border:1px solid var(--oxblood);padding:2px 6px;white-space:nowrap}
+.note p{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--charcoal);line-height:1.4}
+.empty{border:1px dashed rgba(107,15,26,.4);padding:24px;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(26,22,23,.5)}
+#toast{position:fixed;bottom:20px;right:20px;z-index:95;background:var(--charcoal);color:var(--ivory);border:1px solid var(--oxblood);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;padding:12px 18px;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;pointer-events:none}
+#toast.show{opacity:1;transform:none}
+/* ---------- ENVELOPE ---------- */
+.env{max-width:720px;margin:0 auto;padding:48px 24px 72px;display:flex;flex-direction:column;gap:16px}
+.env .lead{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(19px,2.5vw,26px);color:rgba(26,22,23,.8);margin-bottom:8px}
+.bank{border:1px solid var(--oxblood);background:var(--oxblood);color:var(--ivory)}
+.bank-head{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;text-align:left;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.25em;color:var(--ivory)}
+.bank-head svg{transition:transform .3s}
+.bank.open .bank-head svg{transform:rotate(180deg)}
+.bank-body{display:none;border-top:1px solid rgba(250,248,245,.25);padding:20px 24px 24px}
+.bank.open .bank-body{display:block}
+.bank .holder{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(250,248,245,.7)}
+.bank .num{margin-top:10px;font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(18px,3vw,24px);letter-spacing:.12em}
+.bank .ph{margin-top:6px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:rgba(250,248,245,.5)}
+.bank .btn{margin-top:14px;border-color:rgba(250,248,245,.6);color:var(--ivory)}
+.bank .btn:hover{background:var(--ivory);color:var(--oxblood)}
+.bank .btn.done{background:var(--ivory);color:var(--oxblood);border-color:var(--ivory)}
+.gift{border:1px solid var(--charcoal);background:var(--ivory);padding:24px}
+.gift b{display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.25em}
+.gift p{margin-top:12px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:rgba(26,22,23,.7);line-height:1.6}
+/* ---------- FOOTER ---------- */
+footer{position:relative;overflow:hidden;background:var(--charcoal);color:var(--ivory);border-top:1px solid var(--oxblood)}
+footer .wm{position:absolute;right:-96px;top:50%;transform:translateY(-50%);width:384px;opacity:.14;animation:spin 7s linear infinite;pointer-events:none}
+footer .inner{position:relative;padding:80px 24px}
+footer .end{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.35em;color:rgba(250,248,245,.5)}
+footer h2{margin-top:24px;font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.9;font-size:clamp(48px,13vw,140px)}
+footer h2 i{display:block;margin-top:12px;font-family:'Instrument Serif',serif;font-weight:400;font-style:italic;color:var(--oxblood);font-size:clamp(30px,7vw,64px)}
+footer .cols{margin-top:48px;border-top:1px solid rgba(250,248,245,.15);padding-top:28px;display:grid;grid-template-columns:1fr;gap:28px}
+footer .thanks{font-size:14px;color:rgba(250,248,245,.7);line-height:1.7;max-width:440px}
+footer .sig{display:flex;flex-direction:column;gap:10px;align-items:flex-start;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(250,248,245,.5)}
+footer .sig .barcode{background-image:repeating-linear-gradient(to right,rgba(250,248,245,.9) 0 2px,transparent 2px 4px,rgba(250,248,245,.9) 4px 7px,transparent 7px 9px,rgba(250,248,245,.9) 9px 10px,transparent 10px 14px)}
+/* ---------- PLAYER / LIGHTBOX / TOAST ---------- */
+#player{display:none;position:fixed;bottom:20px;left:20px;z-index:40;cursor:pointer;border-radius:50%;box-shadow:0 8px 24px rgba(26,22,23,.4);transition:transform .2s}
+#player:active{transform:scale(.9)}
+body.unlocked #player{display:block}
+#player .mini{position:relative;width:48px;height:48px;border-radius:50%;background:repeating-radial-gradient(circle at 50% 50%,#1A1617 0 2px,#2E2629 2px 3.4px);animation:spin 1.4s linear infinite}
+#player .mini::after{content:"";position:absolute;inset:32%;border-radius:50%;background:var(--oxblood)}
+#player .mini::before{content:"";position:absolute;left:50%;top:50%;width:4px;height:4px;margin:-2px;border-radius:50%;background:var(--ivory);z-index:1}
+#player.muted .mini{animation-play-state:paused}
+
+#lightbox{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;background:rgba(26,22,23,.95);backdrop-filter:blur(4px)}
+#lightbox.open{display:flex}
+#lightbox figure{position:relative;max-width:92vw}
+#lightbox img{max-width:92vw;max-height:78vh;object-fit:contain;border:1px solid rgba(250,248,245,.25)}
+#lightbox .lb-top{position:absolute;top:-32px;left:0;display:flex;gap:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(250,248,245,.8)}
+#lightbox .lb-cnt{position:absolute;bottom:-32px;right:0;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;color:rgba(250,248,245,.6)}
+#lightbox button{position:absolute;color:var(--ivory);border:1px solid rgba(250,248,245,.3);padding:8px;transition:background .2s}
+#lightbox button:hover{background:var(--oxblood)}
+#lightbox .x{top:16px;right:16px}
+#lightbox .pv{left:12px;top:50%;transform:translateY(-50%)}
+#lightbox .nx{right:12px;top:50%;transform:translateY(-50%)}
+/* ---------- RESPONSIVE ---------- */
+@media(min-width:768px){
+ .g-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:190px}
+ .wall{grid-template-columns:1fr 1fr}
+ footer .cols{grid-template-columns:1fr 1fr}
+ footer .sig{align-items:flex-end;text-align:right}
+}
+@media(min-width:1024px){
+ .hero-grid{grid-template-columns:7fr 5fr}
+ .hero-media{border-bottom:0;border-right:1px solid var(--oxblood)}
+ .hero-media img{height:78vh}
+ .hero-side .inner,.person{padding:56px 40px 72px}
+ .hero-side .inner{padding-top:0;padding-bottom:64px}
+ .couple-grid{grid-template-columns:1fr 1fr}
+ .person+.person{border-top:0;border-left:1px solid var(--oxblood)}
+ .ev-grid{grid-template-columns:1fr 1fr}
+ .rsvp-grid{grid-template-columns:1fr 1fr}
+ .rsvp-form{border-bottom:0;border-right:1px solid var(--oxblood)}
+ .track{grid-template-columns:2fr 6fr 4fr;align-items:baseline;gap:16px;padding:28px 16px}
+ .track .nt{text-align:right}
+ .sec-head,.filters{padding-left:40px;padding-right:40px}
+ .g-grid{padding:24px 40px}.g-end{margin:32px 40px 48px}
+ .ev-grid{padding:80px 40px}
+ .rsvp-form,.notes{padding:64px 40px}
+ .env{padding:80px 40px}
+ footer .inner{padding:96px 40px}
+}
+</style>
+</head>
+<body class="locked">
+<div class="grain"></div>
+
+<!-- ============ GATE OVERLAY ============ -->
+<div id="gate">
+  <img class="gate-bg" src="https://images.unsplash.com/photo-1522941471521-6ee21ec5cc26?q=80&w=1800&auto=format&fit=crop" alt="Yayan & Isni"/>
+  <div class="gate-tint"></div><div class="gate-shade"></div>
+  <div class="gate-body">
+    <header>
+      <p class="gate-tag">[ RECORD NO. 01 — LENTERA EDITION ]</p>
+      <h1 class="gate-title"><b>Wedding of </b><i>Yayan</i><b> &amp; </b><i>Isni</i></h1>
+      <div class="gate-badge">45 RPM • SIDE A • 06.12.2026</div>
+    </header>
+    <div class="lock">
+      <div class="disc-wrap">
+        <svg id="ring" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="99" fill="none" stroke="rgba(250,248,245,.4)" stroke-width="1.2" stroke-dasharray="4 6"/>
+          <circle id="ringp" cx="100" cy="100" r="99" fill="none" stroke="#FAF8F5" stroke-width="2.5" stroke-dasharray="0 622" transform="rotate(-90 100 100)"/>
+        </svg>
+        <div id="disc" role="button" aria-label="Putar vinyl untuk membuka undangan">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="sh" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#FAF8F5" stop-opacity=".16"/>
+                <stop offset=".35" stop-color="#FAF8F5" stop-opacity="0"/>
+                <stop offset=".7" stop-color="#FAF8F5" stop-opacity="0"/>
+                <stop offset="1" stop-color="#FAF8F5" stop-opacity=".1"/>
+              </linearGradient>
+              <path id="arc" d="M100,100 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0" fill="none"/>
+            </defs>
+            <circle cx="100" cy="100" r="99" fill="#1A1617"/>
+            <circle cx="100" cy="100" r="42" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="49" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="56" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="63" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="77" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="84" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="91" fill="none" stroke="#2E2629" stroke-width="0.7" opacity="0.85"/>
+            <circle cx="100" cy="100" r="98" fill="url(#sh)"/>
+            <circle cx="100" cy="100" r="36" fill="#6B0F1A"/>
+            <circle cx="100" cy="100" r="36" fill="none" stroke="#FAF8F5" stroke-width=".6" opacity=".7"/>
+            <circle cx="100" cy="100" r="18" fill="none" stroke="#FAF8F5" stroke-width=".5" opacity=".4"/>
+            <text fill="#FAF8F5" style="font:6.2px 'Space Mono',monospace;letter-spacing:1.6px">
+              <textPath href="#arc" startOffset="2%">YAYAN &amp; ISNI • 45 RPM • LENTERA •</textPath>
+            </text>
+            <circle cx="100" cy="100" r="3" fill="#FAF8F5"/>
+            <circle cx="100" cy="100" r="3" fill="none" stroke="#1A1617" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="notch"></div>
+      </div>
+      <div id="rot" class="mono">Putar vinyl untuk membuka undangan</div>
+      <div id="badge" class="mono">OPENING... ✓</div>
+      
+      <div class="ticket">
+        <i></i><i></i><i></i><i></i>
+        <small>SPECIAL INVITATION FOR:</small>
+        <p id="guest">Tamu Undangan Terhormat</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="the-wedding" style="border-top:0">
+  <div class="marq" id="ticker">
+    <div class="marq-in">
+      <span>THE WEDDING OF YAYAN &amp; ISNI<i>•</i>06.12.2026<i>•</i>SAVE THE DATE<i>•</i>TRACK 01: LENTERA<i>•</i></span>
+      <span aria-hidden="true">THE WEDDING OF YAYAN &amp; ISNI<i>•</i>06.12.2026<i>•</i>SAVE THE DATE<i>•</i>TRACK 01: LENTERA<i>•</i></span>
+    </div>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-media">
+      <img id="heroimg" src="images/hero.jpg" alt="Prewedding Yayan & Isni"/>
+      <span class="chip tl">EXPOSURE 01 — GOLDEN HOUR, LOMBOK</span>
+      <span class="chip br">35MM // F.1.8</span>
+    </div>
+    <div class="hero-side">
+      <div class="sec-head" style="border-top:0"><span class="tag">01 — THE WEDDING</span><span class="meta">CAT. 06.12.2026</span></div>
+      <div class="inner">
+        <div>
+          <h2 class="hero-names">
+            <span class="mask"><span class="l1">YAYAN</span></span>
+            <span class="mask"><span class="l2">&amp; Isni</span></span>
+          </h2>
+          <p class="hero-quote rv">“Di dalam setiap putaran vinyl, ada cerita yang tidak pernah usang — seperti sumpah yang ingin kami ucapkan.”</p>
+        </div>
+        <div class="rv">
+          <div class="cd-top"><span class="tag">COUNTDOWN — 06.12.2026 // 10.00 WITA</span><span class="live">● LIVE</span></div>
+          <div class="cd">
+            <div><b id="cd-d">00</b><small>DAYS</small></div>
+            <div><b id="cd-h">00</b><small>HRS</small></div>
+            <div><b id="cd-m">00</b><small>MINS</small></div>
+            <div><b id="cd-s">00</b><small>SECS</small></div>
+          </div>
+          <p class="cd-note">RINJANI WATERPARK — SELONG, LOMBOK TIMUR</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COUPLE ============ -->
+<section id="the-couple">
+  <div class="sec-head"><span class="tag">02 — THE COUPLE</span><span class="meta">GATEFOLD SLEEVE // 33 RPM</span></div>
+  <div class="couple-grid">
+    <div class="person rv">
+      <div class="frame">
+        <div class="imgwrap"><img src="images/yayan.jpg" alt="Adianli Islahuzzain"/></div>
+        <span class="tag">PORTRAIT FR. 01</span>
+      </div>
+      <div>
+        <h3><span class="full">Adianli Islahuzzain</span><span class="nick">(Yayan)</span></h3>
+        <p class="parents">PUTRA DARI BAPAK MUH. SHOLEHUDDIN, S.PD.I &amp; IBU ZAINIAH</p>
+      </div>
+      <a class="ig" href="https://instagram.com/" target="_blank" rel="noopener">[ @YAYAN — INSTAGRAM ]</a>
+    </div>
+    <div class="person rv">
+      <div class="frame">
+        <div class="imgwrap"><img src="images/isni.jpg" alt="Isni Tarwiyah"/></div>
+        <span class="tag">PORTRAIT FR. 02</span>
+      </div>
+      <div>
+        <h3><span class="full">Isni Tarwiyah</span><span class="nick">(Isni)</span></h3>
+        <p class="parents">PUTRI DARI BAPAK ALM. SAHLI &amp; IBU ALMH. RAEHAN</p>
+      </div>
+      <a class="ig" href="https://instagram.com/" target="_blank" rel="noopener">[ @ISNI — INSTAGRAM ]</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="sec-head"><span class="tag">[ 03 // VISUAL ARCHIVE — PREWEDDING GALLERY ]</span><span class="meta" id="gcount">9 FRAMES</span></div>
+  <div class="filters" id="filters"></div>
+  <div class="g-grid" id="ggrid"></div>
+  <div class="g-end">FILM STRIP ENDS — KODAK PORTRA 400</div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="sec-head"><span class="tag">04 — LOVE STORY</span><span class="meta">BACK COVER // TRACKLIST</span></div>
+  <div style="padding:56px 24px" class="rv">
+    <h2>THE <i>Tracklist</i></h2>
+    <p class="sub">EMPAT REKAMAN — SATU SISI PENUH — SEPENUH HATI</p>
+    <div class="tracks" id="tracks"></div>
+    <div class="story-foot"><span class="barcode"></span><span>LNT-2026-0612 • SIDE B • 45 RPM</span></div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section id="events">
+  <div class="sec-head"><span class="tag">05 — EVENT SCHEDULE &amp; LOCATION</span><span class="meta">BOARDING PASS // WITA (UTC+8)</span></div>
+  <div class="ev-grid">
+    <div class="ev-card rv">
+      <div class="ev-head"><b>01 // AKAD NIKAH</b><span class="bc"></span></div>
+      <div class="ev-body">
+        <div class="ev-meta"><span>MINGGU, 06.12.2026</span><span>10.00 WITA</span></div>
+        <div class="ev-venue">RINJANI WATERPARK<span>SELONG, LOMBOK TIMUR — NUSA TENGGARA BARAT</span></div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rinjani+Waterpark+Selong+Lombok+Timur" target="_blank" rel="noopener">OPEN GOOGLE MAPS ↗</a>
+      </div>
+    </div>
+    <div class="ev-card rv">
+      <div class="ev-head"><b>02 // RESEPSI PERNIKAHAN</b><span class="bc"></span></div>
+      <div class="ev-body">
+        <div class="ev-meta"><span>MINGGU, 06.12.2026</span><span>13.00 WITA — SELESAI</span></div>
+        <div class="ev-venue">RINJANI WATERPARK<span>SELONG, LOMBOK TIMUR — NUSA TENGGARA BARAT</span></div>
+        <div class="map"><iframe title="Peta lokasi" src="https://maps.google.com/maps?q=Rinjani%20Waterpark%20Selong%20Lombok%20Timur&z=14&output=embed" loading="lazy"></iframe></div>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rinjani+Waterpark+Selong+Lombok+Timur" target="_blank" rel="noopener">OPEN GOOGLE MAPS ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section id="rsvp">
+  <div class="sec-head"><span class="tag">06 — RSVP &amp; LIVE GUESTBOOK</span><span class="meta">LINER NOTES // WRITE YOURS</span></div>
+  <div class="rsvp-grid">
+    <div class="rsvp-form">
+      <h3 class="rv">RSVP <i>Form</i></h3>
+      <form id="rsvpform" class="rv">
+        <label><span class="flabel">NAMA TAMU — [AUTO-FILLED DARI LINK]</span>
+          <input type="text" id="f-name" value="Tamu Undangan Terhormat"/></label>
+        <div><span class="flabel">STATUS KEHADIRAN</span>
+          <div class="seg" id="f-status"></div></div>
+        <div><span class="flabel">JUMLAH TAMU</span>
+          <div class="seg two" id="f-guests"></div></div>
+        <label><span class="flabel">PESAN &amp; DOA</span>
+          <textarea id="f-msg" rows="4" placeholder="Tulis harapan untuk kedua mempelai…"></textarea></label>
+        <div class="form-actions">
+          <button type="submit" class="btn solid" id="f-send">KIRIM LINER NOTE</button>
+          <a class="btn" id="f-wa" style="display:none" target="_blank" rel="noopener">KONFIRMASI VIA WHATSAPP ↗</a>
+        </div>
+      </form>
+    </div>
+    <div class="notes">
+      <div class="notes-top"><span class="tag">LIVE LINER NOTES WALL</span><span class="cnt" id="ncount">000 ENTRIES</span></div>
+      <div class="wall" id="wall"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENVELOPE ============ -->
+<section id="gift">
+  <div class="sec-head"><span class="tag">07 — DIGITAL ENVELOPE</span><span class="meta">WEDDING GIFT // OPTIONAL</span></div>
+  <div class="env">
+    <p class="lead rv">“Kehadiran Anda adalah hadiah terindah. Namun jika ingin memberi tanda kasih, silakan gunakan kanal di bawah.”</p>
+    <div class="bank rv" id="bank1">
+      <button class="bank-head">01 // BANK TRANSFER — BANK BRI<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="bank-body">
+        <p class="holder">a/n ADIANLI ISLAHUZZAIN</p>
+        <p class="num" id="num1">0000 0000 0000 000</p>
+        <p class="ph">[ NOMOR REKENING — PLACEHOLDER, GANTI DENGAN NOMOR ASLI ]</p>
+        <button class="btn" data-copy="num1">COPY ACCOUNT NUMBER</button>
+      </div>
+    </div>
+    <div class="bank rv" id="bank2">
+      <button class="bank-head">02 // BANK TRANSFER — BANK BCA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="bank-body">
+        <p class="holder">a/n ISNI TARWIYAH</p>
+        <p class="num" id="num2">0000 0000 0000 000</p>
+        <p class="ph">[ NOMOR REKENING — PLACEHOLDER, GANTI DENGAN NOMOR ASLI ]</p>
+        <button class="btn" data-copy="num2">COPY ACCOUNT NUMBER</button>
+      </div>
+    </div>
+    <div class="gift rv">
+      <b>03 // KIRIM KADO FISIK</b>
+      <p>[ALAMAT PENGIRIMAN KADO — DROPPED AT RINJANI WATERPARK, SELONG, LOMBOK TIMUR]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <svg class="wm" viewBox="0 0 200 200"><circle cx="100" cy="100" r="98" fill="none" stroke="#FAF8F5" stroke-width="1.5"/><circle cx="100" cy="100" r="30" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="38" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="46" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="54" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="62" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="70" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="78" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="86" fill="none" stroke="#FAF8F5" stroke-width=".7" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="26" fill="#FAF8F5" opacity=".9"/><circle cx="100" cy="100" r="3" fill="#1A1617"/></svg>
+  <div class="inner">
+    <p class="end rv">END OF RECORD — SIDE B</p>
+    <h2 class="rv">YAYAN &amp; ISNI<i>— 2026 —</i></h2>
+    <div class="cols rv">
+      <p class="thanks">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai. Sampai jumpa di pinggir kolam — Rinjani Waterpark, Selong.</p>
+      <div class="sig"><span class="barcode"></span><span>LNT-2026-0612 • 45 RPM • STEREO</span><span>DESIGNED &amp; ENGINEERED BY YAYAN — MANDALIKE DIGITAL STUDIO</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MINI PLAYER / LIGHTBOX / TOAST ============ -->
+<div id="player" title="Tap untuk Putar/Matikan Musik">
+  <div class="mini"></div>
+</div>
+
+<div id="lightbox">
+  <figure>
+    <img id="lb-img" src="" alt=""/>
+    <div class="lb-top" id="lb-top"></div>
+    <div class="lb-cnt" id="lb-cnt"></div>
+  </figure>
+  <button class="x" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <button class="pv" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+  <button class="nx" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
+<div id="toast"></div>
+
+<script>
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show')},2600)}
+
+var IMG=function(id){return 'images/'+id};
+var GALLERY=[
+ {id:'galeri-1.jpg',cat:'OUTDOOR',sp:'2 / span 2;grid-row:span 2'},
+ {id:'galeri-2.jpg',cat:'OUTDOOR',sp:'2 / span 2;grid-row:auto'},
+ {id:'galeri-3.jpg',cat:'OUTDOOR',sp:'1 / span 1;grid-row:auto'},
+ {id:'galeri-4.jpg',cat:'STUDIO',sp:'1 / span 1;grid-row:span 2'},
+ {id:'galeri-5.jpg',cat:'OUTDOOR',sp:'1 / span 1;grid-row:auto'},
+ {id:'galeri-6.jpg',cat:'STUDIO',sp:'2 / span 2;grid-row:auto'},
+ {id:'galeri-7.jpg',cat:'OUTDOOR',sp:'1 / span 1;grid-row:auto'},
+ {id:'galeri-8.jpg',cat:'STUDIO',sp:'1 / span 1;grid-row:auto'},
+ {id:'galeri-9.jpg',cat:'OUTDOOR',sp:'2 / span 2;grid-row:auto'}
+];
+GALLERY.forEach(function(g,i){g.index='IMG_'+('00'+(i+1)).slice(-3);g.src=IMG(g.id);g.col=+g.sp.split(' / ')[0];g.row=g.sp.split('grid-row:')[1]});
+var TRACKS=[
+ {no:'TRACK 01',t:'First Frequency',s:'Awal Pertemuan',n:'02:47 — DUA PULAU, SATU SINYAL'},
+ {no:'TRACK 02',t:'Between Two Islands',s:'Perjalanan & Komitmen',n:'03:52 — LOMBOK — SELAT ALOR'},
+ {no:'TRACK 03',t:'The Engagement',s:'Oktober 2026',n:'04:15 — JAWABAN: IYA'},
+ {no:'TRACK 04',t:'The Main Stage',s:'Desember 2026',n:'10:00 WITA — RINJANI WATERPARK'}
+];
+var WA_NUMBER='6281234567890'; 
+
+(function(){
+  try{
+    var to=new URLSearchParams(location.search).get('to');
+    if(to && to.trim()){
+      var guestName = to.trim();
+      $('#guest').textContent = guestName;
+      var fName = $('#f-name');
+      if(fName) fName.value = guestName;
+    }
+  }catch(e){}
+})();
+
+/* ---------- AUDIO ENGINE (Mobile Fix) ---------- */
+var audio={el:null,ctx:null,gain:null,started:false,muted:false,unlocked:false};
+function audioEl(){
+  if(!audio.el){
+    audio.el=new Audio();
+    audio.el.loop=true;
+    audio.el.preload='auto';
+    audio.el.src='audio/lentera.mp3';
+  }
+  return audio.el;
+}
+
+function unlockAudio(){
+  if(audio.unlocked) return;
+  var el = audioEl();
+  el.play().then(function(){
+    el.pause();
+    audio.unlocked = true;
+  }).catch(function(){});
+  document.removeEventListener('pointerdown', unlockAudio);
+  document.removeEventListener('touchstart', unlockAudio);
+}
+document.addEventListener('pointerdown', unlockAudio);
+document.addEventListener('touchstart', unlockAudio);
+
+function startAudio(){
+ if(audio.started)return;audio.started=true;var el=audioEl();
+ try{
+  var Ctx=window.AudioContext||window.webkitAudioContext;audio.ctx=new Ctx();
+  var src=audio.ctx.createMediaElementSource(el);audio.gain=audio.ctx.createGain();
+  audio.gain.gain.value=0;src.connect(audio.gain);audio.gain.connect(audio.ctx.destination);
+  audio.ctx.resume().then(function(){return el.play()}).then(function(){
+   var t=audio.ctx.currentTime;audio.gain.gain.setValueAtTime(0,t);audio.gain.gain.linearRampToValueAtTime(.75,t+2.5)
+  }).catch(function(){ el.play(); });
+ }catch(e){ el.play(); }
+}
+
+function toggleMute(){
+ audio.muted=!audio.muted;
+ if(audio.ctx&&audio.gain){
+   var t=audio.ctx.currentTime;
+   audio.gain.gain.cancelScheduledValues(t);
+   audio.gain.gain.setValueAtTime(audio.gain.gain.value,t);
+   audio.gain.gain.linearRampToValueAtTime(audio.muted?0:.75,t+.4)
+ }else if(audio.el){
+   audio.el.volume=audio.muted?0:.75
+ }
+ if(audio.muted) $('#player').classList.add('muted');
+ else $('#player').classList.remove('muted');
+}
+$('#player').addEventListener('click',toggleMute);
+
+/* ---------- VINYL GATE ---------- */
+var rotation=0,fired=false,drag={active:false,last:0,moved:0,t0:0},rafId=null;
+var RING_C=2*Math.PI*99;
+function angleOf(e){var r=$('#disc').getBoundingClientRect();return Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-(r.left+r.width/2))*180/Math.PI}
+function renderRot(){
+ $('#disc').style.transform='rotate('+rotation+'deg)';
+ var p=Math.max(0,Math.min(rotation,45))/45;
+ $('#ringp').setAttribute('stroke-dasharray',(RING_C*p)+' '+RING_C);
+}
+function tweenTo(target,dur){
+ cancelAnimationFrame(rafId);var from=rotation,t0=performance.now();
+ function step(now){var k=Math.min(1,(now-t0)/dur);var e=1-Math.pow(1-k,3);rotation=from+(target-from)*e;renderRot();if(k<1)rafId=requestAnimationFrame(step)}
+ rafId=requestAnimationFrame(step);
+}
+function fireUnlock(){
+ if(fired)return;fired=true;cancelAnimationFrame(rafId);
+ $('#badge').style.display='inline-flex';
+ var rotEl=$('#rot'); if(rotEl) rotEl.style.display='none';
+ $('#disc').classList.add('spin');
+ if(navigator.vibrate)navigator.vibrate(80);
+ try { startAudio(); } catch(e){}
+ document.body.classList.remove('locked');
+ document.body.classList.add('unlocked');
+ var g=$('#gate');
+ if(g){
+   g.style.transition='transform .9s cubic-bezier(.77,0,.175,1), opacity .8s ease';
+   g.style.transform='translateY(-100%)';
+   setTimeout(function(){ g.style.display='none'; }, 900);
+ }
+}
+function handleStart(e){
+  if(fired) return;
+  drag.active = true;
+  drag.last = angleOf(e);
+  drag.moved = 0;
+  drag.t0 = Date.now();
+}
+function handleMove(e){
+  if(!drag.active || fired) return;
+  var a = angleOf(e);
+  var d = a - drag.last;
+  if(d > 180) d -= 360;
+  if(d < -180) d += 360;
+  drag.last = a;
+  drag.moved += Math.abs(d);
+  rotation += d;
+  renderRot();
+  if(rotation >= 45){
+    drag.active = false;
+    fireUnlock();
+  }
+}
+function handleEnd(e){
+  if(!drag.active || fired) return;
+  drag.active = false;
+  var isTap = drag.moved < 6 && (Date.now() - drag.t0) < 400;
+  if(isTap){
+    fireUnlock();
+    tweenTo(45, 900);
+  } else {
+    tweenTo(0, 700);
+  }
+}
+var discEl = $('#disc');
+if(discEl){
+  discEl.addEventListener('pointerdown', handleStart);
+  window.addEventListener('pointermove', handleMove);
+  window.addEventListener('pointerup', handleEnd);
+  window.addEventListener('pointercancel', handleEnd);
+  discEl.addEventListener('click', function(){
+    if(!fired){
+      fireUnlock();
+      tweenTo(45, 900);
+    }
+  });
+}
+
+var TARGET=new Date('2026-12-06T10:00:00+08:00');
+function tick(){
+ var d=Math.max(0,TARGET.getTime()-Date.now());
+ $('#cd-d').textContent=('0'+Math.floor(d/86400000)).slice(-2);
+ $('#cd-h').textContent=('0'+Math.floor(d%86400000/3600000)).slice(-2);
+ $('#cd-m').textContent=('0'+Math.floor(d%3600000/60000)).slice(-2);
+ $('#cd-s').textContent=('0'+Math.floor(d%60000/1000)).slice(-2);
+}
+tick();setInterval(tick,1000);
+
+window.addEventListener('scroll',function(){
+ var y=window.scrollY;if(y<window.innerHeight*1.2)$('#heroimg').style.transform='scale(1.08) translateY('+(y*.08)+'px)';
+},{passive:true});
+
+var filter='ALL',lbIdx=null;
+function renderFilters(){
+ var wrap=$('#filters');wrap.innerHTML='';
+ ['ALL','OUTDOOR','STUDIO'].forEach(function(k){
+  var b=document.createElement('button');
+  b.textContent=k==='ALL'?'[ ALL ARCHIVES ]':k==='OUTDOOR'?'[ OUTDOOR SESSION ]':'[ STUDIO / EDITORIAL ]';
+  if(filter===k)b.className='on';
+  b.addEventListener('click',function(){filter=k;renderFilters();renderGrid()});
+  wrap.appendChild(b);
+ });
+}
+function visibleItems(){return GALLERY.filter(function(g){return filter==='ALL'||g.cat===filter})}
+function renderGrid(){
+ var items=visibleItems(),grid=$('#ggrid');grid.innerHTML='';
+ $('#gcount').textContent=items.length+' FRAMES';
+ items.forEach(function(g,i){
+  var f=document.createElement('figure');f.className='g-item';
+  f.style.gridColumn='span '+g.col;f.style.gridRow=g.row.indexOf('span')>-1&&g.row!=='auto'?(g.row.replace('grid-row:','')):g.row;
+  f.innerHTML='<img loading="lazy" src="'+g.src+'" alt="'+g.index+'"/><figcaption>'+g.index+' — '+g.cat+'</figcaption>';
+  f.addEventListener('click',function(){openLb(i)});
+  grid.appendChild(f);
+ });
+}
+function openLb(i){lbIdx=i;var g=visibleItems()[i];$('#lb-img').src=g.src;$('#lb-top').textContent=g.index+'  —  '+g.cat+' SESSION';$('#lb-cnt').textContent=('0'+(i+1)).slice(-2)+' / '+('0'+visibleItems().length).slice(-2);$('#lightbox').classList.add('open')}
+function closeLb(){$('#lightbox').classList.remove('open');lbIdx=null}
+function navLb(d){if(lbIdx===null)return;var n=visibleItems().length;openLb((lbIdx+d+n)%n)}
+$('#lightbox .x').addEventListener('click',closeLb);
+$('#lightbox .pv').addEventListener('click',function(e){e.stopPropagation();navLb(-1)});
+$('#lightbox .nx').addEventListener('click',function(e){e.stopPropagation();navLb(1)});
+$('#lightbox').addEventListener('click',function(e){if(e.target===this)closeLb()});
+window.addEventListener('keydown',function(e){if(lbIdx===null)return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')navLb(1);if(e.key==='ArrowLeft')navLb(-1)});
+renderFilters();renderGrid();
+
+(function(){
+ var wrap=$('#tracks');wrap.innerHTML='';
+ TRACKS.forEach(function(t){
+  var d=document.createElement('div');d.className='track';
+  d.innerHTML='<span class="no">'+t.no+'</span><span><span class="tt">'+t.t+'</span><br/><span class="st">('+t.s+')</span></span><span class="nt">'+t.n+'</span>';
+  wrap.appendChild(d);
+ });
+})();
+
+var KEY='lentera_notes_v1';
+var SEED=[
+ {name:'Keluarga Besar H. Ahmad',attendance:'HADIR',guests:2,message:'Selamat Yayan & Isni! Semoga menjadi keluarga sakinah mawaddah warahmah.',created_at:'2026-11-08T13:29:17Z'},
+ {name:'Sahabat Kecil Isni',attendance:'BELUM_PASTI',guests:1,message:'Insya Allah hadir, doa terbaik untuk kalian berdua.',created_at:'2026-11-08T13:29:18Z'}
+];
+function loadNotes(){try{var raw=localStorage.getItem(KEY);if(raw)return JSON.parse(raw);localStorage.setItem(KEY,JSON.stringify(SEED));return SEED}catch(e){return SEED}}
+function saveNotes(n){try{localStorage.setItem(KEY,JSON.stringify(n))}catch(e){}}
+var STATUSES=['HADIR','BELUM PASTI','BERHALANGAN'];
+var att='HADIR',guests=1,lastWish=null;
+function renderSeg(){
+ var s=$('#f-status');s.innerHTML='';
+ STATUSES.forEach(function(st){
+  var val=st.replace(' ','_');var b=document.createElement('button');b.type='button';b.textContent='[ '+st+' ]';
+  if(att===val)b.className='on';
+  b.addEventListener('click',function(){att=val;renderSeg()});
+  s.appendChild(b);
+ });
+ var g=$('#f-guests');g.innerHTML='';
+ [1,2].forEach(function(n){
+  var b=document.createElement('button');b.type='button';b.textContent=n;
+  if(guests===n)b.className='on';
+  b.addEventListener('click',function(){guests=n;renderSeg()});
+  g.appendChild(b);
+ });
+}
+function renderWall(){
+ var notes=loadNotes(),wall=$('#wall');wall.innerHTML='';
+ $('#ncount').textContent=('00'+notes.length).slice(-3)+' ENTRIES';
+ if(!notes.length){wall.innerHTML='<div class="empty">[ BELUM ADA ENTRI — JADILAH YANG PERTAMA MENULIS ]</div>';return}
+ notes.forEach(function(n){
+  var d=document.createElement('article');d.className='note';
+  d.innerHTML='<div class="top"><span>'+(n.name||'').toUpperCase()+'</span><em>'+(n.attendance||'').replace('_',' ')+' • '+n.guests+'</em></div><p>“'+(n.message||'Terima kasih — sampai jumpa di Rinjani!')+'”</p>';
+  wall.appendChild(d);
+ });
+}
+$('#rsvpform').addEventListener('submit',function(e){
+ e.preventDefault();
+ var name=$('#f-name').value.trim();
+ if(!name){toast('[ NAMA TAMU WAJIB DIISI ]');return}
+ var msg=$('#f-msg').value.trim();
+ var note={name:name,attendance:att,guests:guests,message:msg,created_at:new Date().toISOString()};
+ var notes=loadNotes();notes.unshift(note);saveNotes(notes);renderWall();
+ lastWish=note;$('#f-msg').value='';
+ $('#f-wa').style.display='inline-flex';
+ $('#f-wa').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent('Halo Yayan & Isni! Saya '+note.name+' — konfirmasi kehadiran: '+note.attendance.replace('_',' ')+' ('+note.guests+' orang). Terima kasih!');
+ toast('[ TERKIRIM — LINER NOTE TERSIMPAN ✓ ]');
+});
+renderSeg();renderWall();
+
+$$('.bank-head').forEach(function(h){h.addEventListener('click',function(){h.parentNode.classList.toggle('open')})});
+$$('[data-copy]').forEach(function(b){
+ b.addEventListener('click',function(){
+  var text=$('#'+b.getAttribute('data-copy')).textContent.trim();
+  function done(){b.classList.add('done');b.textContent='COPIED TO CLIPBOARD ✓';setTimeout(function(){b.classList.remove('done');b.textContent='COPY ACCOUNT NUMBER'},2000)}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done).catch(function(){fallback()})}
+  else fallback();
+  function fallback(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done()}
+ });
+});
+
+var io=new IntersectionObserver(function(entries){
+ entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+},{threshold:.15});
+$$('.rv, .mask').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
