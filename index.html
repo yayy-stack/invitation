@@ -626,28 +626,55 @@ function fireUnlock(){
    g.style.transform='translateY(-100%)';
    setTimeout(function(){ g.style.display='none'; }, 900);
  }
-$('#disc').addEventListener('pointerdown',function(e){
- if(fired)return;e.preventDefault();
- drag.active=true;drag.last=angleOf(e);drag.moved=0;drag.t0=Date.now();
- try{e.currentTarget.setPointerCapture(e.pointerId)}catch(err){}
-});
-$('#disc').addEventListener('pointermove',function(e){
- if(!drag.active||fired)return;
- var a=angleOf(e),d=a-drag.last;
- if(d>180)d-=360;if(d<-180)d+=360;
- drag.last=a;drag.moved+=Math.abs(d);
- rotation+=d;renderRot();
-});
-function onUp(e){
- if(!drag.active||fired)return;drag.active=false;
- if(rotation>=45){fireUnlock();return}
- var isTap=drag.moved<6&&Date.now()-drag.t0<400;
- if(isTap){fireUnlock();tweenTo(45,900)}
- else tweenTo(0,700);
+function handleStart(e){
+  if(fired) return;
+  drag.active = true;
+  drag.last = angleOf(e);
+  drag.moved = 0;
+  drag.t0 = Date.now();
 }
-$('#disc').addEventListener('pointerup',onUp);
-$('#disc').addEventListener('pointercancel',onUp);
 
+function handleMove(e){
+  if(!drag.active || fired) return;
+  var a = angleOf(e);
+  var d = a - drag.last;
+  if(d > 180) d -= 360;
+  if(d < -180) d += 360;
+  drag.last = a;
+  drag.moved += Math.abs(d);
+  rotation += d;
+  renderRot();
+  if(rotation >= 45){
+    drag.active = false;
+    fireUnlock();
+  }
+}
+
+function handleEnd(e){
+  if(!drag.active || fired) return;
+  drag.active = false;
+  var isTap = drag.moved < 6 && (Date.now() - drag.t0) < 400;
+  if(isTap){
+    fireUnlock();
+    tweenTo(45, 900);
+  } else {
+    tweenTo(0, 700);
+  }
+}
+
+var discEl = $('#disc');
+if(discEl){
+  discEl.addEventListener('pointerdown', handleStart);
+  window.addEventListener('pointermove', handleMove);
+  window.addEventListener('pointerup', handleEnd);
+  window.addEventListener('pointercancel', handleEnd);
+  discEl.addEventListener('click', function(){
+    if(!fired){
+      fireUnlock();
+      tweenTo(45, 900);
+    }
+  });
+}
 /* ---------- COUNTDOWN ---------- */
 var TARGET=new Date('2026-12-06T10:00:00+08:00');
 function tick(){
