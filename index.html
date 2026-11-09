@@ -274,33 +274,35 @@ body.unlocked #player{display:block}
 <div id="gate">
   <img class="gate-bg" src="https://images.unsplash.com/photo-1522941471521-6ee21ec5cc26?q=80&w=1800&auto=format&fit=crop" alt="Yayan & Isni"/>
   <div class="gate-tint"></div><div class="gate-shade"></div>
-  <div class="gate-body">
-    <header>
-      <p class="gate-tag">[ RECORD NO. 01 — LENTERA EDITION ]</p>
-      <h1 class="gate-title"><b>Wedding of </b><i>Yayan</i><b> &amp; </b><i>Isni</i></h1>
-      <div class="gate-badge">45 RPM • SIDE A • 06.12.2026</div>
-    </header>
-    <div class="lock">
-      <div class="disc-wrap">
-        <svg id="ring" viewBox="0 0 240 240">
-          <circle cx="120" cy="120" r="108" fill="none" stroke="rgba(250,248,245,.35)" stroke-width="1" stroke-dasharray="3 6"/>
-          <circle id="ringp" cx="120" cy="120" r="108" fill="none" stroke="#FAF8F5" stroke-width="2.5" stroke-dasharray="0 678.6" transform="rotate(-90 120 120)"/>
-          <path id="ringa" d="M 120 8 l -5 8 l 10 0 z" fill="#FAF8F5" transform="rotate(-90 120 120)" opacity="0"/>
-          <text x="120" y="26" text-anchor="middle" fill="#FAF8F5" style="font:10px 'Space Mono';letter-spacing:2px">0° → 45°</text>
-        </svg>
-        <div id="disc" role="button" aria-label="Putar vinyl 45 derajat searah jarum jam untuk membuka undangan"></div>
-        <div class="notch"></div>
-      </div>
-      <div id="rot" class="mono">Putar vinyl untuk membuka undangan</div>
-      <div id="badge" class="mono">45° UNLOCKED ✓</div>
-    </div>
-    <div class="ticket">
-      <i></i><i></i><i></i><i></i>
-      <small>SPECIAL INVITATION FOR:</small>
-      <p id="guest">Tamu Undangan Terhormat</p>
-    </div>
-  </div>
-</div>
+ <div class="gate-body">
+    <header>
+      <p class="gate-tag">[ RECORD NO. 01 — LENTERA EDITION ]</p>
+      <h1 class="gate-title"><b>Wedding of </b><i>Yayan</i><b> &amp; </b><i>Isni</i></h1>
+      <div class="gate-badge">45 RPM • SIDE A • 06.12.2026</div>
+    </header>
+    <div class="lock">
+      <div class="disc-wrap">
+        <svg id="ring" viewBox="0 0 240 240">
+          <circle cx="120" cy="120" r="108" fill="none" stroke="rgba(250,248,245,.35)" stroke-width="1" stroke-dasharray="3 6"/>
+          <circle id="ringp" cx="120" cy="120" r="108" fill="none" stroke="#FAF8F5" stroke-width="2.5" stroke-dasharray="0 678.6" transform="rotate(-90 120 120)"/>
+          <path id="ringa" d="M 120 8 l -5 8 l 10 0 z" fill="#FAF8F5" transform="rotate(-90 120 120)" opacity="0"/>
+          <text x="120" y="26" text-anchor="middle" fill="#FAF8F5" style="font:10px 'Space Mono';letter-spacing:2px">0° → 45°</text>
+        </svg>
+        <div id="disc" role="button" aria-label="Putar vinyl 45 derajat searah jarum jam untuk membuka undangan"></div>
+        <div class="notch"></div>
+      </div>
+      <div id="rot" class="mono">Putar vinyl untuk membuka undangan</div>
+      
+      <!-- KOTAK NAMA TAMU SEKARANG DIPINDAH KE SINI -->
+      <div class="ticket" style="margin-top: 24px; margin-bottom: 24px; max-width: 300px; width: 100%;">
+        <i></i><i></i><i></i><i></i>
+        <small>SPECIAL INVITATION FOR:</small>
+        <p id="guest">Tamu Undangan Terhormat</p>
+      </div>
+      
+      <div id="badge" class="mono">45° UNLOCKED ✓</div>
+    </div>
+  </div>
 
 <!-- ============ HERO ============ -->
 <section id="the-wedding" style="border-top:0">
@@ -609,9 +611,22 @@ function fireUnlock(){
  setTimeout(function(){var g=$('#gate');if(g)g.style.display='none'},1000);
 }
 $('#disc').addEventListener('pointerdown',function(e){
- if(fired)return;e.preventDefault();
- drag.active=true;drag.last=angleOf(e);drag.moved=0;drag.t0=Date.now();
- try{e.currentTarget.setPointerCapture(e.pointerId)}catch(err){}
+ if(fired)return;e.preventDefault();
+ 
+ // UNLOCK AUDIO UNTUK SAFARI SAAT PERTAMA KALI DISENTUH
+ if (!audio.started && audioIsSafariLike()) {
+   try { 
+     var el = audioEl(); 
+     el.volume = 0; // Mulai dengan silent
+     var playPromise = el.play(); 
+     if (playPromise !== undefined) {
+       playPromise.then(function() { el.pause(); }).catch(function(e){});
+     }
+   } catch(err) {}
+ }
+
+ drag.active=true;drag.last=angleOf(e);drag.moved=0;drag.t0=Date.now();
+ try{e.currentTarget.setPointerCapture(e.pointerId)}catch(err){}
 });
 $('#disc').addEventListener('pointermove',function(e){
  if(!drag.active||fired)return;
