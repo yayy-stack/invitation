@@ -140,6 +140,18 @@ section{border-top:1px solid var(--oxblood)}
 .barcode{height:40px;width:160px;background-image:repeating-linear-gradient(to right,var(--charcoal) 0 2px,transparent 2px 4px,var(--charcoal) 4px 7px,transparent 7px 9px,var(--charcoal) 9px 10px,transparent 10px 14px)}
 .barcode.iv{background-image:repeating-linear-gradient(to right,rgba(250,248,245,.9) 0 2px,transparent 2px 4px,rgba(250,248,245,.9) 4px 7px,transparent 7px 9px,rgba(250,248,245,.9) 9px 10px,transparent 10px 14px)}
 .story-foot span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:rgba(26,22,23,.5)}
+/* ---------- VIDEO REEL ---------- */
+.v-grid{display:grid;grid-template-columns:1fr;max-width:960px;margin:0 auto;padding:32px 24px 48px}
+.v-card{border:1px solid var(--oxblood);background:var(--ivory);display:flex;flex-direction:column}
+.v-box{position:relative;aspect-ratio:16/9;background:var(--charcoal);overflow:hidden}
+.v-box video{width:100%;height:100%;object-fit:cover;border:0;display:block;filter:grayscale(.25) contrast(1.05);transition:filter .5s}
+.v-card:hover .v-box video{filter:none}
+.v-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-top:1px solid var(--oxblood);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--oxblood)}
+.v-meta span:last-child{color:rgba(26,22,23,.55)}
+@media(min-width:1024px){
+ .v-grid{padding:48px 40px 64px;gap:32px}
+}
+
 /* ---------- EVENTS ---------- */
 .ev-grid{display:grid;grid-template-columns:1fr;gap:32px;padding:48px 24px}
 .ev-card{display:flex;flex-direction:column;border:1px solid var(--oxblood);background:var(--ivory)}
@@ -383,7 +395,22 @@ body.unlocked #player{display:block}
     <div class="story-foot"><span class="barcode"></span><span>LNT-2026-0612 • SIDE B • 45 RPM</span></div>
   </div>
 </section>
+<!-- ============ VIDEO ARCHIVE ============ -->
+<section id="video-reel">
+  <div class="sec-head"><span class="tag">[ 04.5 // MOTION ARCHIVE — PREWEDDING FILM ]</span><span class="meta">SUPER 8MM // 24 FPS</span></div>
+  <div class="v-grid">
+    <figure class="v-card rv">
+      <div class="v-box">
+        <video class="auto-vid" muted loop playsinline preload="metadata" poster="images/mood-1.jpg">
+          <source src="video/teaser-1.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <figcaption class="v-meta"><span>REEL 01 — OUR MOOD TEASER</span><span>SILENT LOOP</span></figcaption>
+    </figure>
 
+    
+  </div>
+</section>
 <!-- ============ EVENTS ============ -->
 <section id="events">
   <div class="sec-head"><span class="tag">05 — EVENT SCHEDULE &amp; LOCATION</span><span class="meta">BOARDING PASS // WITA (UTC+8)</span></div>
@@ -501,19 +528,34 @@ var $=function(s){return document.querySelector(s)},$$=function(s){return Array.
 function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('show')},2600)}
 
 /* ---------- DATA ---------- */
-var IMG=function(id,w){return 'https://images.unsplash.com/'+id+'?q=80&w='+(w||1600)+'&auto=format&fit=crop'};
 var GALLERY=[
- {id:'photo-1758387813664-5cd1211304f6',cat:'OUTDOOR',sp:'2 / span 2;grid-row:span 2'},
- {id:'photo-1778058616547-41e0c78405bf',cat:'OUTDOOR',sp:'2 / span 2;grid-row:auto'},
- {id:'photo-1782786398583-204128485db0',cat:'OUTDOOR',sp:'1 / span 1;grid-row:auto'},
- {id:'photo-1595882669314-919b3d51f2c7',cat:'STUDIO',sp:'1 / span 1;grid-row:span 2'},
- {id:'photo-1571753217087-980e556e16ea',cat:'OUTDOOR',sp:'1 / span 1;grid-row:auto'},
- {id:'photo-1617127365659-c47fa864d8bc',cat:'STUDIO',sp:'2 / span 2;grid-row:auto'},
- {id:'photo-1679599441308-0f9e95330ac5',cat:'OUTDOOR',sp:'1 / span 1;grid-row:auto'},
- {id:'photo-1612336307429-8a898d10e223',cat:'STUDIO',sp:'1 / span 1;grid-row:auto'},
- {id:'photo-1783816297042-72cbd3269c63',cat:'OUTDOOR',sp:'2 / span 2;grid-row:auto'}
+ // --- 9 FRAME: OUR MOOD ---
+ {src:'images/mood-1.jpg',cat:'OUR MOOD',sp:'2 / span 2;grid-row:span 2'},
+ {src:'images/mood-2.jpg',cat:'OUR MOOD',sp:'2 / span 2;grid-row:auto'},
+ {src:'images/mood-3.jpg',cat:'OUR MOOD',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/mood-4.jpg',cat:'OUR MOOD',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/mood-5.jpg',cat:'OUR MOOD',sp:'1 / span 1;grid-row:span 2'},
+ {src:'images/mood-6.jpg',cat:'OUR MOOD',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/mood-7.jpg',cat:'OUR MOOD',sp:'2 / span 2;grid-row:auto'},
+ {src:'images/mood-8.jpg',cat:'OUR MOOD',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/mood-9.jpg',cat:'OUR MOOD',sp:'2 / span 2;grid-row:auto'},
+
+ // --- 9 FRAME: TRADITIONAL ---
+ {src:'images/trad-1.jpg',cat:'TRADITIONAL',sp:'2 / span 2;grid-row:span 2'},
+ {src:'images/trad-2.jpg',cat:'TRADITIONAL',sp:'2 / span 2;grid-row:auto'},
+ {src:'images/trad-3.jpg',cat:'TRADITIONAL',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/trad-4.jpg',cat:'TRADITIONAL',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/trad-5.jpg',cat:'TRADITIONAL',sp:'1 / span 1;grid-row:span 2'},
+ {src:'images/trad-6.jpg',cat:'TRADITIONAL',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/trad-7.jpg',cat:'TRADITIONAL',sp:'2 / span 2;grid-row:auto'},
+ {src:'images/trad-8.jpg',cat:'TRADITIONAL',sp:'1 / span 1;grid-row:auto'},
+ {src:'images/trad-9.jpg',cat:'TRADITIONAL',sp:'2 / span 2;grid-row:auto'}
 ];
-GALLERY.forEach(function(g,i){g.index='IMG_'+('00'+(i+1)).slice(-3);g.src=IMG(g.id);g.col=+g.sp.split(' / ')[0];g.row=g.sp.split('grid-row:')[1]});
+GALLERY.forEach(function(g,i){
+  g.index='IMG_'+('00'+(i+1)).slice(-3);
+  g.col=+g.sp.split(' / ')[0];
+  g.row=g.sp.split('grid-row:')[1];
+});
 var TRACKS=[
  {no:'TRACK 01',t:'First Frequency',s:'Awal Pertemuan',n:'02:47 — DUA PULAU, SATU SINYAL'},
  {no:'TRACK 02',t:'Between Two Islands',s:'Perjalanan & Komitmen',n:'03:52 — LOMBOK — SELAT ALOR'},
@@ -661,9 +703,9 @@ window.addEventListener('scroll',function(){
 var filter='ALL',lbIdx=null;
 function renderFilters(){
   var wrap=$('#filters');wrap.innerHTML='';
-  ['ALL','OUTDOOR','STUDIO'].forEach(function(k){
+  ['ALL','OUR MOOD','TRADITIONAL'].forEach(function(k){
     var b=document.createElement('button');
-    b.textContent=k==='ALL'?'[ ALL ARCHIVES ]':k==='OUTDOOR'?'[ OUTDOOR SESSION ]':'[ STUDIO / EDITORIAL ]';
+    b.textContent=k==='ALL'?'[ ALL ARCHIEVES ]':'[ '+k+' ]';
     if(filter===k)b.className='on';
     b.addEventListener('click',function(){filter=k;renderFilters();renderGrid()});
     wrap.appendChild(b);
@@ -768,6 +810,22 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
 },{threshold:.15});
 $$('.rv, .mask').forEach(function(el){io.observe(el)});
+ /* ---------- AUTOPLAY MUTED VIDEO ON SCROLL ---------- */
+var vidObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(en){
+    var v=en.target;
+    v.muted=true;
+    if(en.isIntersecting){
+      v.play().catch(function(){});
+    }else{
+      v.pause();
+    }
+  });
+},{threshold:0.4});
+$$('.auto-vid').forEach(function(v){
+  v.muted=true;
+  vidObserver.observe(v);
+});
 </script>
 </body>
 </html>
