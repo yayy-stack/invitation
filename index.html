@@ -86,7 +86,8 @@ section{border-top:1px solid var(--oxblood)}
 .hero-names{line-height:.95}
 .hero-names .l1{font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.03em;font-size:clamp(40px,7vw,68px);color:var(--charcoal)}
 .hero-names .l2{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(40px,7vw,68px);color:var(--oxblood)}
-.hero-quote{margin-top:24px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:rgba(26,22,23,.8);max-width:440px}
+.hero-quote{margin-top:24px;font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;line-height:1.45;color:rgba(26,22,23,.85);max-width:480px}
+.hero-quote cite{display:block;margin-top:10px;font-family:'Space Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:var(--oxblood)}
 .cd-top{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--oxblood);padding-top:18px;margin-bottom:16px}
 .cd-top .tag{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--oxblood)}
 .cd-top .live{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--oxblood);animation:pulse 1.6s ease-in-out infinite}
@@ -109,7 +110,7 @@ section{border-top:1px solid var(--oxblood)}
 .person h3 .full{display:block;font-family:'Syne',sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(30px,5vw,48px);color:var(--charcoal);text-transform:uppercase}
 .person h3 .nick{display:block;margin-top:8px;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(24px,3.5vw,32px);color:var(--oxblood)}
 .person .parents{margin-top:16px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:rgba(26,22,23,.7)}
-.ig{margin-top:auto;display:inline-flex;align-items:center;gap:12px;align-self:flex-start;border:1px solid var(--oxblood);padding:12px 20px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.25em;color:var(--oxblood);text-decoration:none;transition:background .3s,color .3s}
+.ig{margin-top:auto;display:inline-flex;align-items:center;gap:12px;align-self:flex-start;border:1px solid var(--oxblood);padding:12px 20px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--oxblood);text-decoration:none;transition:background .3s,color .3s}
 .ig:hover{background:var(--oxblood);color:var(--ivory)}
 /* ---------- GALLERY ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:8px;padding:20px 24px;border-bottom:1px solid var(--oxblood)}
@@ -151,7 +152,6 @@ section{border-top:1px solid var(--oxblood)}
 @media(min-width:1024px){
  .v-grid{padding:48px 40px 64px;gap:32px}
 }
-
 /* ---------- EVENTS ---------- */
 .ev-grid{display:grid;grid-template-columns:1fr;gap:32px;padding:48px 24px}
 .ev-card{display:flex;flex-direction:column;border:1px solid var(--oxblood);background:var(--ivory)}
@@ -183,7 +183,7 @@ textarea{font-family:'Plus Jakarta Sans',sans-serif;resize:none;min-height:110px
 .seg button{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;border:1px solid rgba(107,15,26,.4);color:var(--oxblood);padding:12px 4px;transition:background .2s,color .2s,border-color .2s}
 .seg button:hover{border-color:var(--oxblood)}
 .seg button.on{background:var(--oxblood);color:var(--ivory);border-color:var(--oxblood)}
-.seg.two{grid-template-columns:repeat(2,110px)}
+.seg.two{grid-template-columns:repeat(3,90px)}
 .seg.two button{font-size:14px}
 .form-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .notes{background:var(--stone);padding:48px 24px}
@@ -209,7 +209,6 @@ textarea{font-family:'Plus Jakarta Sans',sans-serif;resize:none;min-height:110px
 .bank.open .bank-body{display:block}
 .bank .holder{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:rgba(250,248,245,.7)}
 .bank .num{margin-top:10px;font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(18px,3vw,24px);letter-spacing:.12em}
-.bank .ph{margin-top:6px;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:rgba(250,248,245,.5)}
 .bank .btn{margin-top:14px;border-color:rgba(250,248,245,.6);color:var(--ivory)}
 .bank .btn:hover{background:var(--ivory);color:var(--oxblood)}
 .bank .btn.done{background:var(--ivory);color:var(--oxblood);border-color:var(--ivory)}
@@ -319,7 +318,7 @@ body.unlocked #player{display:block}
   </div>
   <div class="hero-grid">
     <div class="hero-media">
-      <img id="heroimg" src="https://images.unsplash.com/photo-1783816297171-381ee4b119e1?q=80&w=1600&auto=format&fit=crop" alt="Prewedding Yayan & Isni"/>
+      <img id="heroimg" src="images/hero.jpg" alt="Prewedding Yayan & Isni"/>
       <span class="chip tl">EXPOSURE 01 — GOLDEN HOUR, LOMBOK</span>
       <span class="chip br">35MM // F.1.8</span>
     </div>
@@ -331,10 +330,10 @@ body.unlocked #player{display:block}
             <span class="mask"><span class="l1">YAYAN</span></span>
             <span class="mask"><span class="l2">&amp; Isni</span></span>
           </h2>
-          <p class="hero-quote rv">“Di dalam setiap putaran vinyl, ada cerita yang tidak pernah usang — seperti sumpah yang ingin kami ucapkan.”</p>
+          <blockquote class="hero-quote rv">“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”<cite>— SURAH AR-RUM AYAT 21</cite></blockquote>
         </div>
         <div class="rv">
-          <div class="cd-top"><span class="tag">COUNTDOWN — 06.12.2026 // 10.00 WITA</span><span class="live">● LIVE</span></div>
+          <div class="cd-top"><span class="tag">COUNTDOWN — 06.12.2026 // 08.00 WITA</span><span class="live">● LIVE</span></div>
           <div class="cd">
             <div><b id="cd-d">00</b><small>DAYS</small></div>
             <div><b id="cd-h">00</b><small>HRS</small></div>
@@ -354,32 +353,32 @@ body.unlocked #player{display:block}
   <div class="couple-grid">
     <div class="person rv">
       <div class="frame">
-        <div class="imgwrap"><img src="https://images.unsplash.com/photo-1617113930975-f9c7243ae527?q=80&w=1200&auto=format&fit=crop" alt="Adianli Islahuzzain"/></div>
+        <div class="imgwrap"><img src="images/yayan.jpg" alt="Adianli Islahuzzain"/></div>
         <span class="tag">PORTRAIT FR. 01</span>
       </div>
       <div>
         <h3><span class="full">Adianli Islahuzzain</span><span class="nick">(Yayan)</span></h3>
         <p class="parents">PUTRA DARI BAPAK MUH. SHOLEHUDDIN, S.PD.I &amp; IBU ZAINIAH</p>
       </div>
-      <a class="ig" href="https://instagram.com/" target="_blank" rel="noopener">[ @YAYAN — INSTAGRAM ]</a>
+      <a class="ig" href="https://instagram.com/yayan.adianli_" target="_blank" rel="noopener">[ @YAYAN.ADIANLI_ — INSTAGRAM ]</a>
     </div>
     <div class="person rv">
       <div class="frame">
-        <div class="imgwrap"><img src="https://images.unsplash.com/photo-1616639943825-e0fbad20a3d3?q=80&w=1200&auto=format&fit=crop" alt="Isni Tarwiyah"/></div>
+        <div class="imgwrap"><img src="images/isni.jpg" alt="Isni Tarwiyah"/></div>
         <span class="tag">PORTRAIT FR. 02</span>
       </div>
       <div>
         <h3><span class="full">Isni Tarwiyah</span><span class="nick">(Isni)</span></h3>
         <p class="parents">PUTRI DARI BAPAK ALM. SAHLI &amp; IBU ALMH. RAEHAN</p>
       </div>
-      <a class="ig" href="https://instagram.com/" target="_blank" rel="noopener">[ @ISNI — INSTAGRAM ]</a>
+      <a class="ig" href="https://instagram.com/isni.tarwiyah" target="_blank" rel="noopener">[ @ISNI.TARWIYAH — INSTAGRAM ]</a>
     </div>
   </div>
 </section>
 
 <!-- ============ GALLERY ============ -->
 <section id="gallery">
-  <div class="sec-head"><span class="tag">[ 03 // VISUAL ARCHIVE — PREWEDDING GALLERY ]</span><span class="meta" id="gcount">9 FRAMES</span></div>
+  <div class="sec-head"><span class="tag">[ 03 // VISUAL ARCHIVE — PREWEDDING GALLERY ]</span><span class="meta" id="gcount">18 FRAMES</span></div>
   <div class="filters" id="filters"></div>
   <div class="g-grid" id="ggrid"></div>
   <div class="g-end">FILM STRIP ENDS — KODAK PORTRA 400</div>
@@ -395,6 +394,7 @@ body.unlocked #player{display:block}
     <div class="story-foot"><span class="barcode"></span><span>LNT-2026-0612 • SIDE B • 45 RPM</span></div>
   </div>
 </section>
+
 <!-- ============ VIDEO ARCHIVE ============ -->
 <section id="video-reel">
   <div class="sec-head"><span class="tag">[ 04.5 // MOTION ARCHIVE — PREWEDDING FILM ]</span><span class="meta">SUPER 8MM // 24 FPS</span></div>
@@ -405,12 +405,11 @@ body.unlocked #player{display:block}
           <source src="video/teaser-1.mp4" type="video/mp4"/>
         </video>
       </div>
-      <figcaption class="v-meta"><span>REEL 01 — OUR MOOD TEASER</span><span>SILENT LOOP</span></figcaption>
+      <figcaption class="v-meta"><span>REEL 01 — PREWEDDING FILM</span><span>SILENT LOOP</span></figcaption>
     </figure>
-
-    
   </div>
 </section>
+
 <!-- ============ EVENTS ============ -->
 <section id="events">
   <div class="sec-head"><span class="tag">05 — EVENT SCHEDULE &amp; LOCATION</span><span class="meta">BOARDING PASS // WITA (UTC+8)</span></div>
@@ -418,7 +417,7 @@ body.unlocked #player{display:block}
     <div class="ev-card rv">
       <div class="ev-head"><b>01 // AKAD NIKAH</b><span class="bc"></span></div>
       <div class="ev-body">
-        <div class="ev-meta"><span>MINGGU, 06.12.2026</span><span>10.00 WITA</span></div>
+        <div class="ev-meta"><span>MINGGU, 06.12.2026</span><span>08.00 WITA</span></div>
         <div class="ev-venue">RINJANI WATERPARK<span>SELONG, LOMBOK TIMUR — NUSA TENGGARA BARAT</span></div>
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rinjani+Waterpark+Selong+Lombok+Timur" target="_blank" rel="noopener">OPEN GOOGLE MAPS ↗</a>
       </div>
@@ -426,7 +425,7 @@ body.unlocked #player{display:block}
     <div class="ev-card rv">
       <div class="ev-head"><b>02 // RESEPSI PERNIKAHAN</b><span class="bc"></span></div>
       <div class="ev-body">
-        <div class="ev-meta"><span>MINGGU, 06.12.2026</span><span>13.00 WITA — SELESAI</span></div>
+        <div class="ev-meta"><span>MINGGU, 06.12.2026</span><span>11.00 WITA — SELESAI</span></div>
         <div class="ev-venue">RINJANI WATERPARK<span>SELONG, LOMBOK TIMUR — NUSA TENGGARA BARAT</span></div>
         <div class="map"><iframe title="Peta lokasi" src="https://maps.google.com/maps?q=Rinjani%20Waterpark%20Selong%20Lombok%20Timur&z=14&output=embed" loading="lazy"></iframe></div>
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rinjani+Waterpark+Selong+Lombok+Timur" target="_blank" rel="noopener">OPEN GOOGLE MAPS ↗</a>
@@ -469,26 +468,24 @@ body.unlocked #player{display:block}
   <div class="env">
     <p class="lead rv">“Kehadiran Anda adalah hadiah terindah. Namun jika ingin memberi tanda kasih, silakan gunakan kanal di bawah.”</p>
     <div class="bank rv" id="bank1">
-      <button class="bank-head">01 // BANK TRANSFER — BANK BRI<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="bank-head">01 // BANK TRANSFER — BANK BCA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
       <div class="bank-body">
         <p class="holder">a/n ADIANLI ISLAHUZZAIN</p>
-        <p class="num" id="num1">0000 0000 0000 000</p>
-        <p class="ph">[ NOMOR REKENING — PLACEHOLDER, GANTI DENGAN NOMOR ASLI ]</p>
+        <p class="num" id="num1">315-133-5011</p>
         <button class="btn" data-copy="num1">COPY ACCOUNT NUMBER</button>
       </div>
     </div>
     <div class="bank rv" id="bank2">
-      <button class="bank-head">02 // BANK TRANSFER — BANK BCA<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+      <button class="bank-head">02 // BANK TRANSFER — BANK MANDIRI<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
       <div class="bank-body">
-        <p class="holder">a/n ISNI TARWIYAH</p>
-        <p class="num" id="num2">0000 0000 0000 000</p>
-        <p class="ph">[ NOMOR REKENING — PLACEHOLDER, GANTI DENGAN NOMOR ASLI ]</p>
+        <p class="holder">a/n ADIANLI ISLAHUZZAIN</p>
+        <p class="num" id="num2">1610012269515</p>
         <button class="btn" data-copy="num2">COPY ACCOUNT NUMBER</button>
       </div>
     </div>
     <div class="gift rv">
       <b>03 // KIRIM KADO FISIK</b>
-      <p>[ALAMAT PENGIRIMAN KADO — DROPPED AT RINJANI WATERPARK, SELONG, LOMBOK TIMUR]</p>
+      <p>PERUMAHAN BUMI PARAMADIVA, NO. Q4, JL. PD INDAH, JEMPONG BARU, KEC. SEKARBELA, KOTA MATARAM, NTB. 83121</p>
     </div>
   </div>
 </section>
@@ -557,12 +554,12 @@ GALLERY.forEach(function(g,i){
   g.row=g.sp.split('grid-row:')[1];
 });
 var TRACKS=[
- {no:'TRACK 01',t:'First Frequency',s:'Awal Pertemuan',n:'02:47 — DUA PULAU, SATU SINYAL'},
- {no:'TRACK 02',t:'Between Two Islands',s:'Perjalanan & Komitmen',n:'03:52 — LOMBOK — SELAT ALOR'},
- {no:'TRACK 03',t:'The Engagement',s:'Oktober 2026',n:'04:15 — JAWABAN: IYA'},
- {no:'TRACK 04',t:'The Main Stage',s:'Desember 2026',n:'10:00 WITA — RINJANI WATERPARK'}
+ {no:'TRACK 01',t:'First Frequency',s:'Awal Pertemuan',n:'20.30 — LOBBY RUMAH SAKIT, 25 AGUSTUS 2024'},
+ {no:'TRACK 02',t:'The Beginning of Our Forever',s:'Perjalanan & Komitmen',n:'17.00 — 02 NOVEMBER 2025'},
+ {no:'TRACK 03',t:'The Engagement',s:'Oktober 2026',n:'DI HARI SUMPAH PEMUDA, KAMI MENGIKAT SUMPAH ATAS IZIN ALLAH UNTUK SELAMANYA'},
+ {no:'TRACK 04',t:'The Main Stage',s:'Desember 2026',n:'08.00 — OUR WEDDING'}
 ];
-var WA_NUMBER='6281234567890';
+var WA_NUMBER='6285155362348';
 
 /* ---------- GUEST NAME (?to=) ---------- */
 (function(){
@@ -683,7 +680,7 @@ $('#disc').addEventListener('touchend',function(e){
 });
 
 /* ---------- COUNTDOWN ---------- */
-var TARGET=new Date('2026-12-06T10:00:00+08:00');
+var TARGET=new Date('2026-12-06T08:00:00+08:00');
 function tick(){
   var d=Math.max(0,TARGET.getTime()-Date.now());
   $('#cd-d').textContent=('0'+Math.floor(d/86400000)).slice(-2);
@@ -744,15 +741,12 @@ renderFilters();renderGrid();
 })();
 
 /* ---------- RSVP + GUESTBOOK (localStorage) ---------- */
-var KEY='lentera_notes_v1';
-var SEED=[
-  {name:'Keluarga Besar H. Ahmad',attendance:'HADIR',guests:2,message:'Selamat Yayan & Isni! Semoga menjadi keluarga sakinah mawaddah warahmah.',created_at:'2026-11-08T13:29:17Z'},
-  {name:'Sahabat Kecil Isni',attendance:'BELUM_PASTI',guests:1,message:'Insya Allah hadir, doa terbaik untuk kalian berdua.',created_at:'2026-11-08T13:29:18Z'}
-];
+var KEY='lentera_notes_v2';
+var SEED=[];
 function loadNotes(){try{var raw=localStorage.getItem(KEY);if(raw)return JSON.parse(raw);localStorage.setItem(KEY,JSON.stringify(SEED));return SEED}catch(e){return SEED}}
 function saveNotes(n){try{localStorage.setItem(KEY,JSON.stringify(n))}catch(e){}}
 var STATUSES=['HADIR','BELUM PASTI','BERHALANGAN'];
-var att='HADIR',guests=1;
+var att='HADIR',guests='1';
 function renderSeg(){
   var s=$('#f-status');s.innerHTML='';
   STATUSES.forEach(function(st){
@@ -762,7 +756,7 @@ function renderSeg(){
     s.appendChild(b);
   });
   var g=$('#f-guests');g.innerHTML='';
-  [1,2].forEach(function(n){
+  ['1','2','2+'].forEach(function(n){
     var b=document.createElement('button');b.type='button';b.textContent=n;
     if(guests===n)b.className='on';
     b.addEventListener('click',function(){guests=n;renderSeg()});
@@ -810,7 +804,8 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
 },{threshold:.15});
 $$('.rv, .mask').forEach(function(el){io.observe(el)});
- /* ---------- AUTOPLAY MUTED VIDEO ON SCROLL ---------- */
+
+/* ---------- AUTOPLAY MUTED VIDEO ON SCROLL ---------- */
 var vidObserver=new IntersectionObserver(function(entries){
   entries.forEach(function(en){
     var v=en.target;
