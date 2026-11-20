@@ -79,8 +79,8 @@ section{border-top:1px solid var(--oxblood)}
 .hero-grid{display:grid;grid-template-columns:1fr}
 .hero-media{position:relative;overflow:hidden;border-bottom:1px solid var(--oxblood)}
 .hero-media img{width:100%;height:52vh;max-height:80vh;object-fit:cover;filter:grayscale(.35) sepia(.12) contrast(1.06) saturate(.92);transform:scale(1.08);will-change:transform}
-.hero-media .chip{position:absolute;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3em;color:var(--ivory);background:rgba(26,22,23,.6);backdrop-filter:blur(4px);padding:4px 10px}
-.chip.tl{top:16px;left:16px}.chip.br{bottom:16px;right:16px;background:var(--oxblood)}
+.hero-media .chip{position:absolute;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.25em;color:var(--ivory);background:rgba(26,22,23,.6);backdrop-filter:blur(4px);padding:5px 12px}
+.chip.br{bottom:16px;right:16px;background:var(--oxblood)}
 .hero-side{background:var(--stone);display:flex;flex-direction:column}
 .hero-side .inner{padding:40px 24px 56px;display:flex;flex-direction:column;gap:40px;flex:1;justify-content:space-between}
 .hero-names{line-height:.95}
@@ -112,7 +112,7 @@ section{border-top:1px solid var(--oxblood)}
 .person .parents{margin-top:16px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;color:rgba(26,22,23,.7)}
 .ig{margin-top:auto;display:inline-flex;align-items:center;gap:12px;align-self:flex-start;border:1px solid var(--oxblood);padding:12px 20px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--oxblood);text-decoration:none;transition:background .3s,color .3s}
 .ig:hover{background:var(--oxblood);color:var(--ivory)}
-/* ---------- GALLERY (FIXED MOBILE FIT & DENSE) ---------- */
+/* ---------- GALLERY ---------- */
 .filters{display:flex;flex-wrap:wrap;gap:8px;padding:20px 24px;border-bottom:1px solid var(--oxblood)}
 .filters button{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;padding:10px 16px;border:1px solid rgba(107,15,26,.4);color:var(--oxblood);transition:background .3s,color .3s,border-color .3s}
 .filters button:hover{border-color:var(--oxblood);background:rgba(107,15,26,.05)}
@@ -121,7 +121,6 @@ section{border-top:1px solid var(--oxblood)}
 .g-item{position:relative;width:100%;height:100%;overflow:hidden;border:1px solid var(--oxblood);background:var(--stone);cursor:zoom-in}
 .g-item img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(.35) sepia(.12) contrast(1.06) saturate(.92);transition:transform .7s ease}
 .g-item:hover img{transform:scale(1.06)}
-.g-item figcaption{position:absolute;bottom:8px;left:8px;max-width:calc(100% - 16px);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;color:var(--ivory);background:rgba(26,22,23,.75);backdrop-filter:blur(4px);padding:3px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .g-end{display:flex;align-items:center;gap:12px;margin:28px 24px 40px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3em;color:rgba(26,22,23,.5)}
 .g-end::before,.g-end::after{content:"";flex:1;border-top:1px dashed rgba(107,15,26,.4)}
 /* ---------- STORY ---------- */
@@ -141,17 +140,6 @@ section{border-top:1px solid var(--oxblood)}
 .barcode{height:40px;width:160px;background-image:repeating-linear-gradient(to right,var(--charcoal) 0 2px,transparent 2px 4px,var(--charcoal) 4px 7px,transparent 7px 9px,var(--charcoal) 9px 10px,transparent 10px 14px)}
 .barcode.iv{background-image:repeating-linear-gradient(to right,rgba(250,248,245,.9) 0 2px,transparent 2px 4px,rgba(250,248,245,.9) 4px 7px,transparent 7px 9px,rgba(250,248,245,.9) 9px 10px,transparent 10px 14px)}
 .story-foot span{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.3em;color:rgba(26,22,23,.5)}
-/* ---------- VIDEO REEL ---------- */
-.v-grid{display:grid;grid-template-columns:1fr;max-width:960px;margin:0 auto;padding:32px 24px 48px}
-.v-card{border:1px solid var(--oxblood);background:var(--ivory);display:flex;flex-direction:column}
-.v-box{position:relative;aspect-ratio:16/9;background:var(--charcoal);overflow:hidden}
-.v-box video{width:100%;height:100%;object-fit:cover;border:0;display:block;filter:grayscale(.15) contrast(1.05);transition:filter .5s}
-.v-card:hover .v-box video{filter:none}
-.v-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-top:1px solid var(--oxblood);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--oxblood)}
-.v-meta span:last-child{color:rgba(26,22,23,.55)}
-@media(min-width:1024px){
- .v-grid{padding:48px 40px 64px;gap:32px}
-}
 /* ---------- EVENTS ---------- */
 .ev-grid{display:grid;grid-template-columns:1fr;gap:32px;padding:48px 24px}
 .ev-card{display:flex;flex-direction:column;border:1px solid var(--oxblood);background:var(--ivory)}
@@ -319,8 +307,7 @@ body.unlocked #player{display:block}
   <div class="hero-grid">
     <div class="hero-media">
       <img id="heroimg" src="images/hero.jpg" alt="Prewedding Yayan & Isni"/>
-      <span class="chip tl">EXPOSURE 01 — GOLDEN HOUR, LOMBOK</span>
-      <span class="chip br">35MM // F.1.8</span>
+      <span class="chip br">THESE TWO KIDS ARE GETTING MARRIED</span>
     </div>
     <div class="hero-side">
       <div class="sec-head" style="border-top:0"><span class="tag">01 — THE WEDDING</span><span class="meta">CAT. 06.12.2026</span></div>
@@ -381,7 +368,7 @@ body.unlocked #player{display:block}
   <div class="sec-head"><span class="tag">[ 03 // VISUAL ARCHIVE — PREWEDDING GALLERY ]</span><span class="meta" id="gcount">18 FRAMES</span></div>
   <div class="filters" id="filters"></div>
   <div class="g-grid" id="ggrid"></div>
-  <div class="g-end">FILM STRIP ENDS — KODAK PORTRA 400</div>
+  <div class="g-end">HOPE YOU HAPPY WITH US!</div>
 </section>
 
 <!-- ============ STORY ============ -->
@@ -392,19 +379,6 @@ body.unlocked #player{display:block}
     <p class="sub">EMPAT REKAMAN — SATU SISI PENUH — SEPENUH HATI</p>
     <div class="tracks" id="tracks"></div>
     <div class="story-foot"><span class="barcode"></span><span>LNT-2026-0612 • SIDE B • 45 RPM</span></div>
-  </div>
-</section>
-
-<!-- ============ VIDEO ARCHIVE ============ -->
-<section id="video-reel">
-  <div class="sec-head"><span class="tag">[ 04.5 // MOTION ARCHIVE — PREWEDDING FILM ]</span><span class="meta">SUPER 8MM // 24 FPS</span></div>
-  <div class="v-grid">
-    <figure class="v-card rv">
-      <div class="v-box">
-        <video id="prewed-vid" class="auto-vid" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/mood-1.jpg" src="video/teaser-1.mp4"></video>
-      </div>
-      <figcaption class="v-meta"><span>REEL 01 — PREWEDDING FILM</span><span>SILENT LOOP</span></figcaption>
-    </figure>
   </div>
 </section>
 
@@ -661,8 +635,6 @@ function triggerUnlock(){
   $('#badge').style.display='inline-flex';
   if(navigator.vibrate)navigator.vibrate(80);
   startAudio();
-  var pv=$('#prewed-vid');
-  if(pv){pv.muted=true;pv.play().catch(function(){});}
   setTimeout(function(){if(audio.available)tip('NOW PLAYING: THE COTTONS — LENTERA')},1200);
   setTimeout(function(){
     document.body.classList.remove('locked');
@@ -696,7 +668,7 @@ window.addEventListener('scroll',function(){
   if(y<window.innerHeight*1.2)$('#heroimg').style.transform='scale(1.08) translateY('+(y*.08)+'px)';
 },{passive:true});
 
-/* ---------- GALLERY (WITH EXTENSION FALLBACK) ---------- */
+/* ---------- GALLERY (CLEAN NO-CAPTION + EXTENSION FALLBACK) ---------- */
 var filter='ALL',lbIdx=null;
 function imgFallback(img){
   var exts=['.JPG','.jpeg','.JPEG','.png','.webp'];
@@ -730,15 +702,12 @@ function renderGrid(){
     im.src=g.src;
     im.alt=g.index;
     im.onerror=function(){imgFallback(this)};
-    var cap=document.createElement('figcaption');
-    cap.textContent=g.index+' — '+g.cat;
     f.appendChild(im);
-    f.appendChild(cap);
     f.addEventListener('click',function(){openLb(i)});
     grid.appendChild(f);
   });
 }
-function openLb(i){lbIdx=i;var g=visibleItems()[i];var lbImg=$('#lb-img');lbImg.setAttribute('data-step','0');lbImg.onerror=function(){imgFallback(this)};lbImg.src=g.src;$('#lb-top').textContent=g.index+'  —  '+g.cat+' SESSION';$('#lb-cnt').textContent=('0'+(i+1)).slice(-2)+' / '+('0'+visibleItems().length).slice(-2);$('#lightbox').classList.add('open')}
+function openLb(i){lbIdx=i;var g=visibleItems()[i];var lbImg=$('#lb-img');lbImg.setAttribute('data-step','0');lbImg.onerror=function(){imgFallback(this)};lbImg.src=g.src;$('#lb-top').textContent=g.cat+' SESSION';$('#lb-cnt').textContent=('0'+(i+1)).slice(-2)+' / '+('0'+visibleItems().length).slice(-2);$('#lightbox').classList.add('open')}
 function closeLb(){$('#lightbox').classList.remove('open');lbIdx=null}
 function navLb(d){if(lbIdx===null)return;var n=visibleItems().length;openLb((lbIdx+d+n)%n)}
 $('#lightbox .x').addEventListener('click',closeLb);
@@ -822,32 +791,6 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
 },{threshold:.15});
 $$('.rv, .mask').forEach(function(el){io.observe(el)});
-
-/* ---------- AUTOPLAY MUTED VIDEO ON SCROLL & FALLBACK ---------- */
-(function(){
-  var pv=$('#prewed-vid');
-  if(!pv)return;
-  var vidExts=['video/teaser-1.MP4','video/teaser-1.mov','video/teaser-1.MOV'];
-  var vStep=0;
-  pv.addEventListener('error',function(){
-    if(vStep<vidExts.length){
-      pv.src=vidExts[vStep++];
-      pv.load();
-      pv.play().catch(function(){});
-    }
-  });
-  var vidObserver=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      pv.muted=true;
-      if(en.isIntersecting){
-        pv.play().catch(function(){});
-      }else{
-        pv.pause();
-      }
-    });
-  },{threshold:0.25});
-  vidObserver.observe(pv);
-})();
 </script>
 </body>
 </html>
